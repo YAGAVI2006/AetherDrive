@@ -8,16 +8,16 @@ Item {
 
     property bool isNightMode: true
     property color accentColor: "#00B4D8"
-    property real driverTemp: 21.5
-    property real passengerTemp: 22.0
-    property int fanSpeed: 3
+    property real driverTemp: 20.5
+    property real passengerTemp: 21.0
+    property int fanSpeed: 4
     property bool autoAc: true
     property bool acEnabled: true
-    property bool recirculate: false
+    property bool recirculate: true
     property bool frontDefrost: false
     property bool rearDefrost: false
-    property int driverSeatHeat: 2     // 0: off, 1: low, 2: med, 3: high
-    property int passengerSeatHeat: 1
+    property int driverSeatHeat: 0     // 0: off, 1: low, 2: med, 3: high
+    property int passengerSeatHeat: 0
 
     ColumnLayout {
         anchors.fill: parent
@@ -28,7 +28,7 @@ Item {
         RowLayout {
             Layout.fillWidth: true
             Text {
-                text: "CLIMATE CONTROL SYSTEM"
+                text: "CLIMATE CONTROL • TROPICAL COOLING"
                 font.pixelSize: 13
                 font.weight: Font.Bold
                 font.letterSpacing: 1.5
@@ -36,7 +36,7 @@ Item {
             }
             Item { Layout.fillWidth: true }
             Text {
-                text: "CABIN TEMP: 21.8°C"
+                text: "OUTSIDE: 32.4°C • CHENNAI"
                 font.pixelSize: 13
                 font.weight: Font.Bold
                 color: root.accentColor

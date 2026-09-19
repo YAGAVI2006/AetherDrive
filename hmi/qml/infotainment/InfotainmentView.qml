@@ -44,7 +44,7 @@ Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         Text {
                             anchors.centerIn: parent
-                            text: "A"
+                            text: "K"
                             font.pixelSize: 13
                             font.weight: Font.Bold
                             color: "#0A0A0A"
@@ -52,7 +52,7 @@ Rectangle {
                     }
 
                     Text {
-                        text: "Alex's AetherDrive"
+                        text: "Karthik's AetherDrive • TN-07"
                         font.pixelSize: 14
                         font.weight: Font.DemiBold
                         font.family: "Segoe UI, Inter, sans-serif"
@@ -90,7 +90,7 @@ Rectangle {
                     Layout.alignment: Qt.AlignVCenter
 
                     Text {
-                        text: "22°C SUNNY"
+                        text: "32°C CHENNAI • SUNNY"
                         font.pixelSize: 12
                         font.weight: Font.Medium
                         color: root.isNightMode ? "#94A3B8" : "#64748B"
@@ -98,7 +98,7 @@ Rectangle {
                     }
 
                     Text {
-                        text: "5G  |  Wi-Fi"
+                        text: "Jio 5G  |  Wi-Fi"
                         font.pixelSize: 12
                         font.weight: Font.DemiBold
                         color: root.isNightMode ? "#E2E8F0" : "#1E293B"

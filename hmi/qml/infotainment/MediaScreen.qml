@@ -126,7 +126,7 @@ Item {
 
                     Text {
                         anchors.horizontalCenter: parent.horizontalCenter
-                        text: "Starlight Velocity"
+                        text: "Aalaporaan Thamizhan"
                         font.pixelSize: 22
                         font.weight: Font.Bold
                         font.family: "Segoe UI, Inter, sans-serif"
@@ -135,7 +135,7 @@ Item {
 
                     Text {
                         anchors.horizontalCenter: parent.horizontalCenter
-                        text: "CyberSynth Orchestra • AetherDrive Hi-Fi Master"
+                        text: "A.R. Rahman • Mersal Hi-Fi Cyber Master"
                         font.pixelSize: 13
                         font.family: "Segoe UI, Inter, sans-serif"
                         color: root.isNightMode ? "#94A3B8" : "#64748B"
@@ -306,10 +306,10 @@ Item {
                     spacing: 10
 
                     model: [
-                        { title: "Neon Skyline", artist: "HyperPulse", duration: "04:12" },
-                        { title: "Quantum Horizon", artist: "CyberEcho", duration: "03:28" },
-                        { title: "Midnight Autobahn", artist: "SynthWave Riders", duration: "05:04" },
-                        { title: "Silicon Dreams", artist: "AetherDrive Lab", duration: "03:52" }
+                        { title: "Vaathi Coming (Electro Mix)", artist: "Anirudh Ravichander", duration: "03:50" },
+                        { title: "Naa Ready (Cyber Bass)", artist: "Anirudh & Asal Kolaar", duration: "04:08" },
+                        { title: "Urvashi Urvashi (Synth Redux)", artist: "A.R. Rahman", duration: "04:32" },
+                        { title: "Senthazham Poovil (Lo-Fi)", artist: "Ilaiyaraaja & SPB", duration: "03:45" }
                     ]
 
                     delegate: Rectangle {

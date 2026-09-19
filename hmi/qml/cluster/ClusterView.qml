@@ -13,11 +13,11 @@ Rectangle {
     property int range: 350
     property string gear: "P"
     property bool doorLocked: true
-    property real speedLimit: 100.0
+    property real speedLimit: 80.0
     property string driveMode: "NORMAL"
     property bool laneDeparture: false
     property string alertMessage: ""
-    property string currentTime: "14:30"
+    property string currentTime: Qt.formatTime(new Date(), "hh:mm")
     property bool isNightMode: true
 
     // Theme color palette
@@ -70,7 +70,7 @@ Rectangle {
                 }
 
                 Text {
-                    text: "21°C"
+                    text: "32°C"
                     font.pixelSize: 13
                     font.weight: Font.Medium
                     font.family: "Segoe UI, Inter, sans-serif"
@@ -295,7 +295,7 @@ Rectangle {
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
                 Text {
-                    text: "ODO 14,820 KM"
+                    text: "ODO 18,450 KM"
                     font.pixelSize: 11
                     font.weight: Font.DemiBold
                     font.letterSpacing: 1.0
@@ -310,7 +310,7 @@ Rectangle {
                 }
 
                 Text {
-                    text: "TRIP 142.5 KM"
+                    text: "TRIP 86.4 KM"
                     font.pixelSize: 11
                     font.weight: Font.DemiBold
                     font.letterSpacing: 1.0
@@ -326,7 +326,7 @@ Rectangle {
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
                 Text {
-                    text: "SDV PLATFORM"
+                    text: "TN CONNECTED SDV"
                     font.pixelSize: 10
                     font.weight: Font.Bold
                     font.letterSpacing: 1.0

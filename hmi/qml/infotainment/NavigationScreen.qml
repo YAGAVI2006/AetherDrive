@@ -172,7 +172,7 @@ Item {
                     color: root.isNightMode ? "#FFFFFF" : "#0F172A"
                 }
                 Text {
-                    text: "Then take Cyberway Boulevard toward Tech Hub"
+                    text: "Take Rajiv Gandhi Salai (OMR) toward Tidel Park"
                     font.pixelSize: 12
                     font.family: "Segoe UI, Inter, sans-serif"
                     color: root.isNightMode ? "#94A3B8" : "#64748B"
@@ -186,14 +186,14 @@ Item {
                 spacing: 2
 
                 Text {
-                    text: "18 MIN • 14.2 KM"
+                    text: "16 MIN • 11.8 KM"
                     font.pixelSize: 15
                     font.weight: Font.Bold
                     font.family: "Segoe UI, Inter, sans-serif"
                     color: root.accentColor
                 }
                 Text {
-                    text: "ETA 14:48 • On Time"
+                    text: "ETA 15:52 • Chennai Traffic Normal"
                     font.pixelSize: 12
                     font.family: "Segoe UI, Inter, sans-serif"
                     color: "#10B981"

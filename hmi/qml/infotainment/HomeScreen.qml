@@ -22,14 +22,14 @@ Item {
             Column {
                 spacing: 2
                 Text {
-                    text: "Welcome back, Alex"
+                    text: "Vanakkam, Karthik"
                     font.pixelSize: 24
                     font.weight: Font.Bold
                     font.family: "Segoe UI, Inter, sans-serif"
                     color: root.isNightMode ? "#FFFFFF" : "#0F172A"
                 }
                 Text {
-                    text: "AetherDrive SDV Platform • All vehicle systems nominal"
+                    text: "AetherDrive SDV • Tamil Nadu Connected Network • All systems nominal"
                     font.pixelSize: 13
                     font.family: "Segoe UI, Inter, sans-serif"
                     color: root.isNightMode ? "#94A3B8" : "#64748B"
@@ -56,7 +56,7 @@ Item {
                         anchors.verticalCenter: parent.verticalCenter
                     }
                     Text {
-                        text: "5G LTE CONNECTED"
+                        text: "JIO 5G CONNECTED"
                         font.pixelSize: 10
                         font.weight: Font.Bold
                         font.letterSpacing: 1
@@ -114,7 +114,7 @@ Item {
                     }
 
                     Text {
-                        text: "Tech Innovation Hub"
+                        text: "Tidel Park IT Corridor"
                         font.pixelSize: root.width < 500 ? 16 : 19
                         font.weight: Font.Bold
                         font.family: "Segoe UI, Inter, sans-serif"
@@ -124,7 +124,7 @@ Item {
                     }
 
                     Text {
-                        text: "In 400m turn right onto Quantum Boulevard"
+                        text: "In 400m turn right onto Rajiv Gandhi Salai (OMR)"
                         font.pixelSize: root.width < 500 ? 11 : 13
                         font.family: "Segoe UI, Inter, sans-serif"
                         color: root.isNightMode ? "#94A3B8" : "#64748B"
@@ -196,7 +196,7 @@ Item {
                             Layout.fillWidth: true
                             spacing: 2
                             Text {
-                                text: "Starlight Velocity"
+                                text: "Aalaporaan Thamizhan"
                                 font.pixelSize: root.width < 500 ? 15 : 17
                                 font.weight: Font.Bold
                                 font.family: "Segoe UI, Inter, sans-serif"
@@ -205,7 +205,7 @@ Item {
                                 width: parent.width
                             }
                             Text {
-                                text: "CyberSynth Orchestra • Hi-Res Audio"
+                                text: "A.R. Rahman • Mersal Cyber Mix"
                                 font.pixelSize: root.width < 500 ? 11 : 12
                                 font.family: "Segoe UI, Inter, sans-serif"
                                 color: root.isNightMode ? "#94A3B8" : "#64748B"
@@ -255,7 +255,7 @@ Item {
                         }
                         Item { Layout.fillWidth: true }
                         Text {
-                            text: "AUTO AC ON"
+                            text: "32°C OUTSIDE"
                             font.pixelSize: 11
                             font.weight: Font.Bold
                             font.family: "Segoe UI, Inter, sans-serif"
@@ -275,7 +275,7 @@ Item {
                                 color: root.isNightMode ? "#64748B" : "#94A3B8"
                             }
                             Text {
-                                text: "21.5°C"
+                                text: "20.5°C"
                                 font.pixelSize: root.width < 500 ? 18 : 22
                                 font.weight: Font.Bold
                                 color: root.isNightMode ? "#FFFFFF" : "#0F172A"
@@ -296,7 +296,7 @@ Item {
                                 color: root.isNightMode ? "#64748B" : "#94A3B8"
                             }
                             Text {
-                                text: "22.0°C"
+                                text: "21.0°C"
                                 font.pixelSize: root.width < 500 ? 18 : 22
                                 font.weight: Font.Bold
                                 color: root.isNightMode ? "#FFFFFF" : "#0F172A"
@@ -335,7 +335,7 @@ Item {
                             iconColor: "#10B981"
                         }
                         Text {
-                            text: root.width < 500 ? "SDV STATUS" : "SOFTWARE DEFINED VEHICLE"
+                            text: root.width < 500 ? "SDV STATUS" : "SDV INDIA CONNECT"
                             font.pixelSize: 11
                             font.weight: Font.DemiBold
                             font.letterSpacing: 1
@@ -357,7 +357,7 @@ Item {
                     }
 
                     Text {
-                        text: "Enhanced autonomous lane assist & cockpit visualizer"
+                        text: "Optimized for Indian EV highways & regenerative traffic assist"
                         font.pixelSize: root.width < 500 ? 11 : 12
                         font.family: "Segoe UI, Inter, sans-serif"
                         color: root.isNightMode ? "#94A3B8" : "#64748B"

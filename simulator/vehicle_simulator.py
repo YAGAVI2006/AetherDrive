@@ -24,13 +24,13 @@ class VehicleSimulator:
 
         # Vehicle state
         self.speed = 0.0          # km/h
-        self.target_speed = 75.0  # cruising target
+        self.target_speed = 68.0  # cruising target
         self.rpm = 800            # RPM
         self.battery = 88.0       # %
         self.range_km = 360       # km
         self.gear = "P"           # P, R, N, D
         self.door_locked = True
-        self.speed_limit = 100
+        self.speed_limit = 80
         self.drive_mode = "NORMAL"
         self.lane_departure = False
         self.alert_msg = ""
