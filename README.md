@@ -7,7 +7,7 @@
 [![OpenCV](https://img.shields.io/badge/OpenCV-ADAS%20Edge%20AI-red.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 
-**AetherDrive** is a next-generation Software-Defined Vehicle (SDV) digital cockpit and connected vehicle platform built with **C++20 / Qt 6 QML** and **Python / PySide6**. It demonstrates automotive-grade human-machine interface (HMI) design, real-time distributed telemetry, over-the-air (OTA) updates, and edge computer vision.
+**AetherDrive** is an industry-aligned Software-Defined Vehicle (SDV) digital cockpit concept demonstrator built with **C++20 / Qt 6 QML** and **Python / PySide6**. It showcases modern automotive human-machine interface (HMI) design, real-time distributed telemetry over MQTT, simulated over-the-air (OTA) updates, and edge computer vision.
 
 ---
 
@@ -261,10 +261,20 @@ AetherDrive/
 
 ## Design Standards & UX Philosophy
 
-- **Automotive Safety & Glanceability**: Visual hierarchy prioritizes speed, driving mode, and active safety alerts. Critical parameters are readable within a 300 ms driver glance.
-- **Responsive Panoramic Form Factor**: Fluid layout adapts dynamically across standard displays up to ultra-wide 32:9 automotive panoramic displays.
+- **Automotive Glanceability & Visual Hierarchy**: Visual hierarchy prioritizes speed, driving mode, and active safety alerts. Critical parameters are readable within a 300 ms driver glance.
+- **Responsive Panoramic Form Factor**: Fluid layout adapts dynamically across standard desktop displays up to ultra-wide 32:9 automotive panoramic displays.
 - **Zero Asset Dependencies**: All gauge sweeps, needles, icons, and diagrams are procedurally drawn with hardware-accelerated QML Canvas. No missing bitmap assets or scaling artifacts on high-DPI displays.
 - **Dark Mode Primary**: Uses `#0A0A0A` deep OLED blacks to eliminate driver eye strain during nighttime driving, paired with `#00B4D8` electric blue cybernetic accents and amber/crimson alert channels.
+- **Architectural Scope & Safety Context**: AetherDrive is designed as an architectural prototype and HMI concept demonstrator. In real-world production vehicle architectures, safety-critical telltales and hard real-time alerts operate under ISO 26262 functional safety constraints on isolated ASIL-rated microcontrollers (e.g., AUTOSAR Classic on Infineon Aurix), while the high-fidelity graphical cluster and infotainment run on Linux/QNX on application SoCs.
+
+---
+
+## Regional Personalization (Tamil Nadu, India)
+
+The demonstrator includes localized context reflecting modern connected vehicle driving in South India:
+- **Navigation**: Turn-by-turn guidance along Chennai's **OMR IT Corridor (Rajiv Gandhi Salai ➔ Tidel Park)** with realistic 80 km/h highway speed limits.
+- **Tropical Climate System**: **32°C outside temperature** with rapid dual-zone cooling presets and cabin air recirculation.
+- **Connected Services**: Jio 5G network integration, driver profile (**Karthik's AetherDrive • TN-07**), and regional Tamil audio playlist.
 
 ---
 
