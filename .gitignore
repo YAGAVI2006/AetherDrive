@@ -1,0 +1,28 @@
+# Build directories
+build/
+bin/
+out/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+venv/
+
+# IDE files
+.vscode/
+.idea/
+*.user
+*.user.*
+*.suo
+*.sln
+
+# OS metadata
+Thumbs.db
+Desktop.ini
+.DS_Store
