@@ -284,14 +284,14 @@ Item {
                     color: root.isNightMode ? "#94A3B8" : "#64748B"
                 }
 
-                Row {
+                RowLayout {
                     Layout.fillWidth: true
                     spacing: 8
                     Repeater {
                         model: 5
                         Rectangle {
-                            width: (parent.width - 32) / 5
-                            height: 16
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 16
                             radius: 4
                             color: (index < root.fanSpeed) ? root.accentColor : (root.isNightMode ? "#1E2632" : "#E2E8F0")
 

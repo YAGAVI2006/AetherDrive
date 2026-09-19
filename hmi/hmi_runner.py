@@ -169,14 +169,33 @@ class MqttBridge(QObject):
         self.host = host
         self.port = port
         self.client = None
+        self._is_connected = False
+        self._retry_timer = QTimer(self)
+        self._retry_timer.setInterval(6000)
+        self._retry_timer.timeout.connect(self._check_connection)
 
     def start(self):
+        self._init_client()
+        self._retry_timer.start()
+
+    def _init_client(self):
+        if self._is_connected:
+            return
         try:
+            if self.client:
+                try:
+                    self.client.loop_stop()
+                    self.client.disconnect()
+                except Exception:
+                    pass
+
             try:
                 self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, "AetherDrive-HMI")
             except AttributeError:
                 self.client = mqtt.Client("AetherDrive-HMI")
 
+            # Set exponential backoff (1s to 30s)
+            self.client.reconnect_delay_set(min_delay=1, max_delay=30)
             self.client.on_connect = self.on_connect
             self.client.on_disconnect = self.on_disconnect
             self.client.on_message = self.on_message
@@ -185,20 +204,29 @@ class MqttBridge(QObject):
             self.client.connect_async(self.host, self.port, 60)
             self.client.loop_start()
         except Exception as e:
-            print(f"[HMI-MQTT] Warning: Could not connect to broker ({e})", flush=True)
+            print(f"[HMI-MQTT] Connection attempt failed: {e}. Will retry in background.", flush=True)
+            self._is_connected = False
+            self.connectionStatus.emit(False)
+
+    def _check_connection(self):
+        if not self._is_connected:
+            self._init_client()
 
     def on_connect(self, client, userdata, flags, rc, properties=None):
         if rc == 0:
             print(f"[HMI-MQTT] Connected to broker successfully.", flush=True)
+            self._is_connected = True
             client.subscribe(TOPIC_DATA, qos=0)
             client.subscribe(TOPIC_ALERT, qos=1)
             self.connectionStatus.emit(True)
         else:
             print(f"[HMI-MQTT] Connection returned code {rc}", flush=True)
+            self._is_connected = False
             self.connectionStatus.emit(False)
 
     def on_disconnect(self, client, userdata, disconnect_flags_or_rc, reason_code=None, properties=None):
-        print(f"[HMI-MQTT] Disconnected from broker.", flush=True)
+        print(f"[HMI-MQTT] Disconnected from broker. Auto-reconnecting...", flush=True)
+        self._is_connected = False
         self.connectionStatus.emit(False)
 
     def on_message(self, client, userdata, msg):
@@ -209,6 +237,7 @@ class MqttBridge(QObject):
             print(f"[HMI-MQTT] Decode error: {e}", flush=True)
 
     def stop(self):
+        self._retry_timer.stop()
         if self.client:
             self.client.loop_stop()
             self.client.disconnect()

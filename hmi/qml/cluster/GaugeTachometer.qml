@@ -29,6 +29,8 @@ Item {
     Canvas {
         id: dialCanvas
         anchors.fill: parent
+        antialiasing: true
+        smooth: true
         renderTarget: Canvas.FramebufferObject
         renderStrategy: Canvas.Threaded
 

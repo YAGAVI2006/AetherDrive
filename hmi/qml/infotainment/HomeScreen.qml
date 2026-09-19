@@ -39,6 +39,7 @@ Item {
             Item { Layout.fillWidth: true }
 
             AetherCard {
+                visible: root.width >= 480
                 implicitWidth: 160
                 implicitHeight: 40
                 isNightMode: root.isNightMode
@@ -104,6 +105,7 @@ Item {
                         Item { Layout.fillWidth: true }
                         Text {
                             text: "18 MIN REMAINING"
+                            visible: root.width >= 480
                             font.pixelSize: 11
                             font.weight: Font.Bold
                             font.family: "Segoe UI, Inter, sans-serif"
@@ -113,17 +115,21 @@ Item {
 
                     Text {
                         text: "Tech Innovation Hub"
-                        font.pixelSize: 19
+                        font.pixelSize: root.width < 500 ? 16 : 19
                         font.weight: Font.Bold
                         font.family: "Segoe UI, Inter, sans-serif"
                         color: root.isNightMode ? "#FFFFFF" : "#0F172A"
+                        elide: Text.ElideRight
+                        Layout.fillWidth: true
                     }
 
                     Text {
                         text: "In 400m turn right onto Quantum Boulevard"
-                        font.pixelSize: 13
+                        font.pixelSize: root.width < 500 ? 11 : 13
                         font.family: "Segoe UI, Inter, sans-serif"
                         color: root.isNightMode ? "#94A3B8" : "#64748B"
+                        elide: Text.ElideRight
+                        Layout.fillWidth: true
                     }
 
                     Item { Layout.fillHeight: true }
@@ -187,19 +193,24 @@ Item {
                         }
 
                         Column {
+                            Layout.fillWidth: true
                             spacing: 2
                             Text {
                                 text: "Starlight Velocity"
-                                font.pixelSize: 17
+                                font.pixelSize: root.width < 500 ? 15 : 17
                                 font.weight: Font.Bold
                                 font.family: "Segoe UI, Inter, sans-serif"
                                 color: root.isNightMode ? "#FFFFFF" : "#0F172A"
+                                elide: Text.ElideRight
+                                width: parent.width
                             }
                             Text {
                                 text: "CyberSynth Orchestra • Hi-Res Audio"
-                                font.pixelSize: 12
+                                font.pixelSize: root.width < 500 ? 11 : 12
                                 font.family: "Segoe UI, Inter, sans-serif"
                                 color: root.isNightMode ? "#94A3B8" : "#64748B"
+                                elide: Text.ElideRight
+                                width: parent.width
                             }
                         }
                     }
@@ -254,7 +265,7 @@ Item {
 
                     RowLayout {
                         Layout.fillWidth: true
-                        spacing: 24
+                        spacing: root.width < 500 ? 12 : 24
 
                         Column {
                             Text {
@@ -265,7 +276,7 @@ Item {
                             }
                             Text {
                                 text: "21.5°C"
-                                font.pixelSize: 22
+                                font.pixelSize: root.width < 500 ? 18 : 22
                                 font.weight: Font.Bold
                                 color: root.isNightMode ? "#FFFFFF" : "#0F172A"
                             }
@@ -286,7 +297,7 @@ Item {
                             }
                             Text {
                                 text: "22.0°C"
-                                font.pixelSize: 22
+                                font.pixelSize: root.width < 500 ? 18 : 22
                                 font.weight: Font.Bold
                                 color: root.isNightMode ? "#FFFFFF" : "#0F172A"
                             }
@@ -324,28 +335,34 @@ Item {
                             iconColor: "#10B981"
                         }
                         Text {
-                            text: "SOFTWARE DEFINED VEHICLE"
+                            text: root.width < 500 ? "SDV STATUS" : "SOFTWARE DEFINED VEHICLE"
                             font.pixelSize: 11
                             font.weight: Font.DemiBold
                             font.letterSpacing: 1
                             font.family: "Segoe UI, Inter, sans-serif"
                             color: root.isNightMode ? "#94A3B8" : "#64748B"
+                            elide: Text.ElideRight
+                            Layout.fillWidth: true
                         }
                     }
 
                     Text {
                         text: "Firmware v2.4.0 Ready"
-                        font.pixelSize: 18
+                        font.pixelSize: root.width < 500 ? 15 : 18
                         font.weight: Font.Bold
                         font.family: "Segoe UI, Inter, sans-serif"
                         color: root.isNightMode ? "#FFFFFF" : "#0F172A"
+                        elide: Text.ElideRight
+                        Layout.fillWidth: true
                     }
 
                     Text {
                         text: "Enhanced autonomous lane assist & cockpit visualizer"
-                        font.pixelSize: 12
+                        font.pixelSize: root.width < 500 ? 11 : 12
                         font.family: "Segoe UI, Inter, sans-serif"
                         color: root.isNightMode ? "#94A3B8" : "#64748B"
+                        elide: Text.ElideRight
+                        Layout.fillWidth: true
                     }
 
                     Item { Layout.fillHeight: true }

@@ -278,8 +278,9 @@ Item {
             }
         }
 
-        // RIGHT: Playlist Queue
+        // RIGHT: Playlist Queue (Responsive: shown on wider viewports)
         AetherCard {
+            visible: root.width >= 560
             Layout.preferredWidth: 280
             Layout.fillHeight: true
             isNightMode: root.isNightMode

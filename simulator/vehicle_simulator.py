@@ -52,12 +52,19 @@ class VehicleSimulator:
 
     def connect_mqtt(self):
         try:
-            # Compatible with both paho-mqtt v1.x and v2.x
+            if self.client:
+                try:
+                    self.client.loop_stop()
+                    self.client.disconnect()
+                except Exception:
+                    pass
+
             try:
                 self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, "AetherDrive-Simulator")
             except AttributeError:
                 self.client = mqtt.Client("AetherDrive-Simulator")
 
+            self.client.reconnect_delay_set(min_delay=1, max_delay=30)
             self.client.on_connect = self.on_connect
             self.client.on_disconnect = self.on_disconnect
             
@@ -65,7 +72,7 @@ class VehicleSimulator:
             self.client.connect_async(self.broker_host, self.broker_port, 60)
             self.client.loop_start()
         except Exception as e:
-            print(f"[SIMULATOR] Warning: Could not connect to MQTT broker ({e}). Will run offline mode.")
+            print(f"[SIMULATOR] Warning: Could not connect to MQTT broker ({e}). Will retry automatically.")
 
     def update_physics(self, dt=0.1):
         self.time_elapsed += dt
@@ -160,6 +167,9 @@ class VehicleSimulator:
                         }), qos=1)
 
                 counter += 1
+                if not self.connected and counter % 50 == 0:
+                    self.connect_mqtt()
+
                 if counter % 10 == 0:  # Log to console once per second
                     status = "CONNECTED" if self.connected else "BROADCASTING"
                     alert_tag = f" | [!] {packet['alert']}" if packet["alert"] else ""

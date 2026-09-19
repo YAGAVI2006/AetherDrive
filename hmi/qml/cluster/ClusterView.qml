@@ -41,8 +41,8 @@ Rectangle {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 20
-        spacing: 12
+        anchors.margins: root.width < 750 ? 12 : 20
+        spacing: root.width < 750 ? 8 : 12
 
         // ================= TOP BAR =================
         RowLayout {
@@ -132,12 +132,14 @@ Rectangle {
         RowLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            spacing: 12
+            spacing: root.width < 750 ? 6 : 12
 
             // LEFT: Tachometer
             Item {
-                Layout.preferredWidth: 230
-                Layout.maximumWidth: 250
+                Layout.preferredWidth: root.width < 750 ? 180 : 230
+                Layout.minimumWidth: 140
+                Layout.maximumWidth: 260
+                Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignVCenter
 
@@ -153,7 +155,7 @@ Rectangle {
             Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                Layout.minimumWidth: 240
+                Layout.minimumWidth: 170
                 Layout.alignment: Qt.AlignVCenter
 
                 // ADAS Road Perspective Lane Canvas
@@ -228,12 +230,13 @@ Rectangle {
 
             // RIGHT: Battery/Range Widget & Gear Indicator
             ColumnLayout {
-                Layout.preferredWidth: 240
-                Layout.maximumWidth: 250
-                Layout.minimumWidth: 230
+                Layout.preferredWidth: root.width < 750 ? 180 : 240
+                Layout.minimumWidth: 140
+                Layout.maximumWidth: 260
+                Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignVCenter
-                spacing: 12
+                spacing: 10
 
                 BatteryRangeWidget {
                     Layout.fillWidth: true

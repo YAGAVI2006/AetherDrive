@@ -24,7 +24,7 @@ Item {
     // Telltale Icon Row
     RowLayout {
         anchors.centerIn: parent
-        spacing: 24
+        spacing: 14
 
         // 1. Headlights
         AetherIcon {
