@@ -12,7 +12,7 @@ import argparse
 from pathlib import Path
 
 from PySide6.QtCore import QObject, Signal, Property, Slot, QUrl, QTimer
-from PySide6.QtGui import QGuiApplication, QIcon
+from PySide6.QtGui import QGuiApplication, QIcon, QFontDatabase, QFont
 from PySide6.QtQml import QQmlApplicationEngine
 from PySide6.QtQuickControls2 import QQuickStyle
 
@@ -252,6 +252,13 @@ def main():
     app = QGuiApplication(sys.argv)
     app.setApplicationName("AetherDrive")
     app.setOrganizationName("AetherAutomotive")
+
+    # Ensure Segoe UI fonts are loaded for crisp automotive typography
+    for font_file in ["segoeui.ttf", "segoeuib.ttf", "segoeuil.ttf", "seguisb.ttf", "arial.ttf"]:
+        p = f"C:/Windows/Fonts/{font_file}"
+        if os.path.exists(p):
+            QFontDatabase.addApplicationFont(p)
+    app.setFont(QFont("Segoe UI", 10))
 
     QQuickStyle.setStyle("Basic")
 
